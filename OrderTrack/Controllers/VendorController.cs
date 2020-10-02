@@ -29,8 +29,8 @@ namespace VendApp.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
-      List<Order> vendorOrders = selectedVendor.Orders;
-      model.Add("vendor", selectedVendors);
+      List<Order> vendorOrders = selectedVendor.VendorOrders;
+      model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
     }
