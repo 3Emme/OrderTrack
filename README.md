@@ -42,7 +42,7 @@ Pierre should be provided with a link to a page presenting him with a form to cr
     * Input:
     * Output:
 
-  2.[] Vendors can be created, with the properties of VendorName, VendorDescription, a list of Orders, and ID.
+  2.[x] Vendors can be created, with the properties of VendorName, VendorDescription, a list of Orders, and ID.
     * Input:
     * Output:
 
