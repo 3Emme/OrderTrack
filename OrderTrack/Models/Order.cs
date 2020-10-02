@@ -6,10 +6,12 @@ namespace VendApp.Models
   {
     public string OrderTitle { get; set; }
     private static List<Order> _instances = new List<Order> { };
-    public Order(string title)
+    public int Id { get; }
+    public Order(string orderTitle)
     {
-      OrderTitle = title;
+      OrderTitle = orderTitle;
       _instances.Add(this);
+      Id = _instances.Count;
     }
     public static void ClearAll()
     {
