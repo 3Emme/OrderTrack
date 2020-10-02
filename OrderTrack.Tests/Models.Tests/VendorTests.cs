@@ -46,5 +46,17 @@ namespace VendApp.Tests
       // Assert
       Assert.AreEqual(updatedVendorName, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      // Arrange
+      List<Vendor> newList = new List<Vendor> { };
+
+      // Act
+      List<Vendor> result = Vendor.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
