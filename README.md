@@ -1,72 +1,74 @@
 # __Currency Exchanger__
 
-#### __An application which a user can use to determine the to determine the cost of buying bread and pastries. September 25, 2020__
+#### __An application which a user can use to manage bread and pastry orders across vendors. October 2, 2020__
 
 #### By _**Emme Buentiempo**_
 
 ## Description
 
-This application was created as an Epicodus assignment, with the intent to have it serve as a demonstration of knowledge after the program's eighth week. For the time being this README will serve as a checklist to demonstrate the satisfaction of all project requirements and objectives. 
+This application was created as an Epicodus assignment, with the intent to have it serve as a demonstration of knowledge after the program's ninth week. For the time being this README will serve as a checklist to demonstrate the satisfaction of all project requirements and objectives. 
 
 ## Project requirements:
 
-Create a C# console application for a bakery that includes the following functionality:
+Pierre was so pleased with your console app for his bakery that he wants to hire you for a new project. This time, he would like you to build him an MVC application to help him track the vendors that purchase baked goods from him and the orders belonging to those vendors.
 
-There should be two classes: one for Bread and one for Pastry.
+For example, Pierre might supply croissants to a vendor called "Suzie's Cafe" once a week. Pierre may want to create a new Vendor to represent the cafe and add new Orders to it to help keep track of his expanding business relationships.
 
-When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
+Use Razor to display information on each page.
 
-A user should be able to specify how many loaves of Bread and how many Pastrys they'd like.
-
-The application will return the total cost of the order.
-
-Pierre offers the following deals:
-
-Bread: Buy 2, get 1 free. A single loaf costs $5.
-Pastry: Buy 1 for \$2 or 3 for $5.
-All functionality for the models should be tested.
+Create a Vendor class. This class should include properties for the vendor's name, a description of the vendor, a List of Orders belonging to the vendor, and any other properties you would like to include.
+Create an Order class. This class should include properties for the title, the description, the price, the date, and any other properties you would like to include.
+The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming Pierre and providing him with a link to a Vendors page.
+The vendors page should contain a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new Vendor object should be saved into a static List and Pierre should be routed back to the homepage.
+Pierre should be able to click a Vendor's name and go to a new page that will display all of that Vendor's orders.
+Pierre should be provided with a link to a page presenting him with a form to create a new Order for a particular Vendor. Hint: The route for this page might look something like: "/vendors/1/orders/new".
 
 ## Project Objectives:
 
-  * Code includes two custom classes and uses namespaces. **[Complete]**
-  * Console application works correctly. **[Complete]**
-  * Application correctly uses auto-implemented properties. **[Incomplete]**
-  * Classes should include methods for determining the price of an order. **[Complete]**
-  * Models are thoroughly tested. **[Complete]**
-  * Previous objectives have been met. **[Complete]**
-  * Required functionality is in place by the 5:00pm Friday deadline. **[Complete]**
-  * Project is in a polished, portfolio-quality state. **[Complete]**
-  * Project demonstrates understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology. **[Complete]**
+  * A splash page is used. [Incomplete]
+  * Project has Vendor and Order classes. [Incomplete]
+  * Project uses two or more controllers. [Incomplete]
+  * Models are thoroughly tested. [Incomplete]
+  * GET and POST requests/responses are used successfully. [Incomplete]
+  * MVC routes follow RESTful conventions. [Incomplete]
+  * Code and documentation follow best practices (descriptive variables names, proper indentation and spacing, separation between user-interface and business logic, detailed commit messages in the correct tense, and a well-formatted README with installation instructions). [Incomplete]
+  * Project is in a polished, portfolio-quality state. [Incomplete]
+  * Required functionality was present at Friday deadline. [Incomplete]
+  * Project demonstrates understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology. [Incomplete]
 
-## Business Specs
+## Specs
 
-  1.[X] Given a number, the BreadCost method will return the number of breads given and calculate the total cost of bread assuming the cost is a $5 for 1.
-    * Input: 1
-    * Output: {1,5}
+  1.[] Orders can be created, with the properties of OrderTitle, OrderDescription, OrderPrice, OrderDate, and ID.
+    * Input:
+    * Output:
 
-  2.[X] Given a number, the BreadCost method will return the number of breads given and the total cost assuming the cost is a single piece is $5 for 1, but that buying 2 will give you a third for free.
-    * Input: 2
-    * Output: {3,10}
+  2.[] Vendors can be created, with the properties of VendorName, VendorDescription, a list of Orders, and ID.
+    * Input:
+    * Output:
 
-  3.[X] Given a number, the PastryCost method will return the number of pastries given and calculate the total cost of pastries assuming the cost is a $2 for 1.
-    * Input: 1
-    * Output: {1,2}
+  3.[] The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming Pierre and providing him with a link to a Vendors page.
+    * Input:
+    * Output:
 
-  4.[X] Given a number, the PastryCost method will return the number of pastries given and the total cost assuming the cost is a single piece is $2 for 1, but that buying 3 costs 5.
-    * Input: 3
-    * Output: {3,5}
+  4.[] The vendors page should contain a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new Vendor object should be saved into a static List and Pierre should be routed back to the homepage.
+    * Input:
+    * Output:
 
-  5.[X] Given two numbers, one for a bread order and the other for a pastry order, the RingUp method will return the total number of bread and patries received in addition to their total cost together.
-    * Input: {2,3}
-    * Output: {3,3,15}
+  5.[] Pierre should be able to click a Vendor's name and go to a new page that will display all of that Vendor's orders.
+    * Input:
+    * Output:
+
+  6.[] Pierre should be provided with a link to a page presenting him with a form to create a new Order for a particular Vendor.
+    * Input:
+    * Output:
 
 ## Setup/Installation Requirements
 
 * _open terminal_
 * _type "cd desktop", then press enter_
-* _type "git clone https://github.com/3emme/Bakery", then press enter_
-* _locate and open directory on desktop named "Bakery" with your console of choice_
-* _in console, locate and move to the directory inside called Bakery_
+* _type "git clone https://github.com/3emme/OrderTrack", then press enter_
+* _locate and open directory on desktop named "OrderTrack" with your console of choice_
+* _in console, locate and move to the directory inside called OrderTrack_
 * _in console, run $dotnet restore_
 * _in console, run $dotnet run_
 
