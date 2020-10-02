@@ -38,7 +38,7 @@ Pierre should be provided with a link to a page presenting him with a form to cr
 
 ## Specs
 
-  1.[] Orders can be created, with the properties of OrderTitle, OrderDescription, OrderPrice, OrderDate, and ID.
+  1.[x] Orders can be created, with the properties of OrderTitle, OrderDescription, OrderPrice, OrderDate, and ID.
     * Input:
     * Output:
 
