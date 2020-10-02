@@ -5,11 +5,13 @@ namespace VendApp.Models
   public class Order
   {
     public string OrderTitle { get; set; }
+    public string OrderDescription { get; set; }
     private static List<Order> _instances = new List<Order> { };
     public int Id { get; }
-    public Order(string orderTitle)
+    public Order(string orderTitle, string orderDescription)
     {
       OrderTitle = orderTitle;
+      OrderDescription = orderDescription;
       _instances.Add(this);
       Id = _instances.Count;
     }
