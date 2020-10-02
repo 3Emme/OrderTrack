@@ -54,7 +54,7 @@ Pierre should be provided with a link to a page presenting him with a form to cr
     * Input:
     * Output:
 
-  5.[] Pierre should be able to click a Vendor's name and go to a new page that will display all of that Vendor's orders.
+  5.[x] Pierre should be able to click a Vendor's name and go to a new page that will display all of that Vendor's orders.
     * Input:
     * Output:
 
