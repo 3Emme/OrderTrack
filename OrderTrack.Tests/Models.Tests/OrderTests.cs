@@ -17,15 +17,15 @@ namespace VendApp.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test","100x Crescent Pastries");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
-    public void GetTitle_ReturnsTitile_String()
+    public void GetTitle_ReturnsTitle_String()
     { 
       // Arange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle);
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries");
       // Act
       string result = newOrder.OrderTitle;
       // Assert
@@ -36,7 +36,7 @@ namespace VendApp.Tests
     {
       // Arrange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle);
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries");
 
       // Act
       string updatedOrderTitle = "Breads for Werewolf bat mitzvah";
@@ -62,7 +62,7 @@ namespace VendApp.Tests
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle);
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries");
 
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
@@ -72,14 +72,42 @@ namespace VendApp.Tests
       //Arrange
       string orderTitle01 = "Pastries for Werewolf bar mitzvah";
       string orderTitle02 = "Breads for Werewolf bat mitzvah";
-      Order newOrder1 = new Order (orderTitle01);
-      Order newOrder2 = new Order (orderTitle02);
+      Order newOrder1 = new Order (orderTitle01,"100x Crescent Pastries");
+      Order newOrder2 = new Order (orderTitle02,"150x Maple Bearclaws");
 
       //Act
         Order result = Order.Find(2);
 
       //Assert
       Assert.AreEqual (newOrder2, result);
+    }
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    { 
+      // Arange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      Order newOrder = new Order(orderTitle,orderDescription);
+      // Act
+      string result = newOrder.OrderDescription;
+      // Assert
+      Assert.AreEqual(orderDescription, result);
+    }
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      // Arrange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      Order newOrder = new Order(orderTitle,orderDescription);
+
+      // Act
+      string updatedOrderDescription = "150x Maple Bearclaws";
+      newOrder.OrderDescription = updatedOrderDescription;
+      string result = newOrder.OrderDescription;
+
+      // Assert
+      Assert.AreEqual(updatedOrderDescription, result);
     }
   }
 }
