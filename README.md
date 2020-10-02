@@ -46,7 +46,7 @@ Pierre should be provided with a link to a page presenting him with a form to cr
     * Input:
     * Output:
 
-  3.[] The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming Pierre and providing him with a link to a Vendors page.
+  3.[x] The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming Pierre and providing him with a link to a Vendors page.
     * Input:
     * Output:
 
