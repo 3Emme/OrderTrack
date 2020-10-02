@@ -17,7 +17,7 @@ namespace VendApp.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test");
+      Vendor newVendor = new Vendor("test","A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
@@ -25,7 +25,7 @@ namespace VendApp.Tests
     { 
       // Arange
       string vendorName = "Wolfman";
-      Vendor newVendor = new Vendor(vendorName);
+      Vendor newVendor = new Vendor(vendorName,"A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.");
       // Act
       string result = newVendor.VendorName;
       // Assert
@@ -36,7 +36,7 @@ namespace VendApp.Tests
     {
       // Arrange
       string vendorName = "Wolfman";
-      Vendor newVendor = new Vendor(vendorName);
+      Vendor newVendor = new Vendor(vendorName,"A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.");
 
       // Act
       string updatedVendorName = "Count Chocula";
@@ -62,7 +62,7 @@ namespace VendApp.Tests
     public void GetId_VendorInstantiateWithAnIdAndGetterReturns_Int()
     {
       string vendorName = "Wolfman";
-      Vendor newVendor = new Vendor(vendorName);
+      Vendor newVendor = new Vendor(vendorName,"A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.");
 
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
@@ -72,14 +72,42 @@ namespace VendApp.Tests
       //Arrange
       string vendorName01 = "Wolfman";
       string vendorName02 = "Count Chocula";
-      Vendor newVendor1 = new Vendor (vendorName01);
-      Vendor newVendor2 = new Vendor (vendorName02);
+      Vendor newVendor1 = new Vendor (vendorName01,"A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.");
+      Vendor newVendor2 = new Vendor (vendorName02,"A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.");
 
       //Act
         Vendor result = Vendor.Find(2);
 
       //Assert
       Assert.AreEqual (newVendor2, result);
+    }
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    { 
+      // Arange
+      string vendorName = "Wolfman";
+      string vendorDescription = "A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.";
+      Vendor newVendor = new Vendor(vendorName,vendorDescription);
+      // Act
+      string result = newVendor.VendorDescription;
+      // Assert
+      Assert.AreEqual(vendorDescription, result);
+    }
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      // Arrange
+      string vendorName = "Wolfman";
+      string vendorDescription = "A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.";
+      Vendor newVendor = new Vendor(vendorName,vendorDescription);
+
+      // Act
+      string updatedVendorDescription = "This description has been redacted.";
+      newVendor.VendorDescription = updatedVendorDescription;
+      string result = newVendor.VendorDescription;
+
+      // Assert
+      Assert.AreEqual(updatedVendorDescription, result);
     }
   }
 }
