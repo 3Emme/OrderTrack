@@ -4,11 +4,11 @@ namespace VendApp.Models
 {
   public class Vendor
   {
-    public string VendorTitle { get; set; }
+    public string VendorName { get; set; }
     private static List<Vendor> _instances = new List<Vendor> { };
-    public Vendor(string vendorTitle)
+    public Vendor(string vendorName)
     {
-      VendorTitle = vendorTitle;
+      VendorName = vendorName;
       _instances.Add(this);
     }
     public static void ClearAll()
