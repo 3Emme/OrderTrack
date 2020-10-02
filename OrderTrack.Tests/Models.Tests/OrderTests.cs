@@ -39,7 +39,7 @@ namespace VendApp.Tests
       Order newOrder = new Order(orderTitle);
 
       // Act
-      string updatedOrderTitle = "Pastries for Werewolf bat mitzvah";
+      string updatedOrderTitle = "Breads for Werewolf bat mitzvah";
       newOrder.OrderTitle = updatedOrderTitle;
       string result = newOrder.OrderTitle;
 
@@ -66,6 +66,20 @@ namespace VendApp.Tests
 
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order () {
+      //Arrange
+      string orderTitle01 = "Pastries for Werewolf bar mitzvah";
+      string orderTitle02 = "Breads for Werewolf bat mitzvah";
+      Order newOrder1 = new Order (orderTitle01);
+      Order newOrder2 = new Order (orderTitle02);
+
+      //Act
+        Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual (newOrder2, result);
     }
   }
 }
