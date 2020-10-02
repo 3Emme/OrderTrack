@@ -109,5 +109,26 @@ namespace VendApp.Tests
       // Assert
       Assert.AreEqual(updatedVendorDescription, result);
     }
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      //Arrange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      double orderPrice = 85.99;
+      string orderDate = "10/21/2020";
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice,orderDate);
+      List<Order> newOrderList = new List<Order> { newOrder };
+      string vendorName = "Wolfman";
+      string vendorDescription = "A furry fellow who once went by the name Jack. He has also been known by the moniker 'Frute Brute'.";
+      Vendor newVendor = new Vendor(vendorName,vendorDescription);
+      newVendor.AddOrder(newOrder);
+
+      //Act
+      List<Order> result = newVendor.VendorOrders;
+
+      //Assert
+      CollectionAssert.AreEqual(newOrderList, result);
+    }
   }
 }
