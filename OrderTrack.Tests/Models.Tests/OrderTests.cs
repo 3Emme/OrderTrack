@@ -17,7 +17,7 @@ namespace VendApp.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test","100x Crescent Pastries",85.99);
+      Order newOrder = new Order("test","100x Crescent Pastries",85.99,"10/21/2020");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
@@ -25,7 +25,7 @@ namespace VendApp.Tests
     { 
       // Arange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99);
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99,"10/21/2020");
       // Act
       string result = newOrder.OrderTitle;
       // Assert
@@ -36,7 +36,7 @@ namespace VendApp.Tests
     {
       // Arrange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99);
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99,"10/21/2020");
 
       // Act
       string updatedOrderTitle = "Breads for Werewolf bat mitzvah";
@@ -62,7 +62,7 @@ namespace VendApp.Tests
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99);
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99,"10/21/2020");
 
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
@@ -72,8 +72,8 @@ namespace VendApp.Tests
       //Arrange
       string orderTitle01 = "Pastries for Werewolf bar mitzvah";
       string orderTitle02 = "Breads for Werewolf bat mitzvah";
-      Order newOrder1 = new Order (orderTitle01,"100x Crescent Pastries",85.99);
-      Order newOrder2 = new Order (orderTitle02,"150x Maple Bearclaws",95.99);
+      Order newOrder1 = new Order (orderTitle01,"100x Crescent Pastries",85.99,"10/21/2020");
+      Order newOrder2 = new Order (orderTitle02,"150x Maple Bearclaws",95.99,"10/31/2020");
 
       //Act
         Order result = Order.Find(2);
@@ -87,7 +87,7 @@ namespace VendApp.Tests
       // Arange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       string orderDescription = "100x Crescent Pastries";
-      Order newOrder = new Order(orderTitle,orderDescription,85.99);
+      Order newOrder = new Order(orderTitle,orderDescription,85.99,"10/21/2020");
       // Act
       string result = newOrder.OrderDescription;
       // Assert
@@ -99,7 +99,7 @@ namespace VendApp.Tests
       // Arrange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       string orderDescription = "100x Crescent Pastries";
-      Order newOrder = new Order(orderTitle,orderDescription,85.99);
+      Order newOrder = new Order(orderTitle,orderDescription,85.99,"10/21/2020");
 
       // Act
       string updatedOrderDescription = "150x Maple Bearclaws";
@@ -116,7 +116,7 @@ namespace VendApp.Tests
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       string orderDescription = "100x Crescent Pastries";
       double orderPrice = 85.99;
-      Order newOrder = new Order(orderTitle,orderDescription,orderPrice);
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice,"10/21/2020");
       // Act
       double result = newOrder.OrderPrice;
       // Assert
@@ -129,7 +129,7 @@ namespace VendApp.Tests
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       string orderDescription = "100x Crescent Pastries";
       double orderPrice = 85.99;
-      Order newOrder = new Order(orderTitle,orderDescription,orderPrice);
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice,"10/21/2020");
 
       // Act
       double updatedOrderPrice = 95.99;
@@ -138,6 +138,38 @@ namespace VendApp.Tests
 
       // Assert
       Assert.AreEqual(updatedOrderPrice, result);
+    }
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    { 
+      // Arange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      double orderPrice = 85.99;
+      string orderDate = "10/21/2020";
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice,orderDate);
+      // Act
+      string result = newOrder.OrderDate;
+      // Assert
+      Assert.AreEqual(orderDate, result);
+    }
+    [TestMethod]
+    public void SetDate_SetDate_String()
+    {
+      // Arrange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      double orderPrice = 85.99;
+      string orderDate = "10/21/2020";
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice,orderDate);
+
+      // Act
+      string updatedOrderDate = "10/31/2020";
+      newOrder.OrderDate = updatedOrderDate;
+      string result = newOrder.OrderDate;
+
+      // Assert
+      Assert.AreEqual(updatedOrderDate, result);
     }
   }
 }
