@@ -22,13 +22,29 @@ namespace VendApp.Tests
     }
     [TestMethod]
     public void GetTitle_ReturnsTitile_String()
-    { //Arange
+    { 
+      //Arange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       Order newOrder = new Order(orderTitle);
       //Act
       string result = newOrder.OrderTitle;
       //Assert
       Assert.AreEqual(orderTitle, result);
+    }
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      Order newOrder = new Order(orderTitle);
+
+      //Act
+      string updatedOrderTitle = "Pastries for Werewolf bat mitzvah";
+      newOrder.OrderTitle = updatedOrderTitle;
+      string result = newOrder.OrderTitle;
+
+      //Assert
+      Assert.AreEqual(updatedOrderTitle, result);
     }
   }
 }
