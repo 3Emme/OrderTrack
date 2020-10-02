@@ -17,7 +17,7 @@ namespace VendApp.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test","100x Crescent Pastries");
+      Order newOrder = new Order("test","100x Crescent Pastries",85.99);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
@@ -25,7 +25,7 @@ namespace VendApp.Tests
     { 
       // Arange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle,"100x Crescent Pastries");
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99);
       // Act
       string result = newOrder.OrderTitle;
       // Assert
@@ -36,7 +36,7 @@ namespace VendApp.Tests
     {
       // Arrange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle,"100x Crescent Pastries");
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99);
 
       // Act
       string updatedOrderTitle = "Breads for Werewolf bat mitzvah";
@@ -62,7 +62,7 @@ namespace VendApp.Tests
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
       string orderTitle = "Pastries for Werewolf bar mitzvah";
-      Order newOrder = new Order(orderTitle,"100x Crescent Pastries");
+      Order newOrder = new Order(orderTitle,"100x Crescent Pastries",85.99);
 
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
@@ -72,8 +72,8 @@ namespace VendApp.Tests
       //Arrange
       string orderTitle01 = "Pastries for Werewolf bar mitzvah";
       string orderTitle02 = "Breads for Werewolf bat mitzvah";
-      Order newOrder1 = new Order (orderTitle01,"100x Crescent Pastries");
-      Order newOrder2 = new Order (orderTitle02,"150x Maple Bearclaws");
+      Order newOrder1 = new Order (orderTitle01,"100x Crescent Pastries",85.99);
+      Order newOrder2 = new Order (orderTitle02,"150x Maple Bearclaws",95.99);
 
       //Act
         Order result = Order.Find(2);
@@ -87,7 +87,7 @@ namespace VendApp.Tests
       // Arange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       string orderDescription = "100x Crescent Pastries";
-      Order newOrder = new Order(orderTitle,orderDescription);
+      Order newOrder = new Order(orderTitle,orderDescription,85.99);
       // Act
       string result = newOrder.OrderDescription;
       // Assert
@@ -99,7 +99,7 @@ namespace VendApp.Tests
       // Arrange
       string orderTitle = "Pastries for Werewolf bar mitzvah";
       string orderDescription = "100x Crescent Pastries";
-      Order newOrder = new Order(orderTitle,orderDescription);
+      Order newOrder = new Order(orderTitle,orderDescription,85.99);
 
       // Act
       string updatedOrderDescription = "150x Maple Bearclaws";
@@ -108,6 +108,36 @@ namespace VendApp.Tests
 
       // Assert
       Assert.AreEqual(updatedOrderDescription, result);
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_Double()
+    { 
+      // Arange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      double orderPrice = 85.99;
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice);
+      // Act
+      double result = newOrder.OrderPrice;
+      // Assert
+      Assert.AreEqual(orderPrice, result);
+    }
+    [TestMethod]
+    public void SetPrice_SetPrice_Double()
+    {
+      // Arrange
+      string orderTitle = "Pastries for Werewolf bar mitzvah";
+      string orderDescription = "100x Crescent Pastries";
+      double orderPrice = 85.99;
+      Order newOrder = new Order(orderTitle,orderDescription,orderPrice);
+
+      // Act
+      double updatedOrderPrice = 95.99;
+      newOrder.OrderPrice = updatedOrderPrice;
+      double result = newOrder.OrderPrice;
+
+      // Assert
+      Assert.AreEqual(updatedOrderPrice, result);
     }
   }
 }
