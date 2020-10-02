@@ -58,7 +58,7 @@ Pierre should be provided with a link to a page presenting him with a form to cr
     * Input:
     * Output:
 
-  6.[] Pierre should be provided with a link to a page presenting him with a form to create a new Order for a particular Vendor.
+  6.[x] Pierre should be provided with a link to a page presenting him with a form to create a new Order for a particular Vendor.
     * Input:
     * Output:
 
