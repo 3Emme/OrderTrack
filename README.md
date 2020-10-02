@@ -50,7 +50,7 @@ Pierre should be provided with a link to a page presenting him with a form to cr
     * Input:
     * Output:
 
-  4.[] The vendors page should contain a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new Vendor object should be saved into a static List and Pierre should be routed back to the homepage.
+  4.[x] The vendors page should contain a link to a page presenting Pierre with a form he can fill out to create a new Vendor. After the form is submitted, the new Vendor object should be saved into a static List and Pierre should be routed back to the homepage.
     * Input:
     * Output:
 
