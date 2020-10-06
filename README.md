@@ -1,4 +1,4 @@
-# __Currency Exchanger__
+# __OrderTrack__
 
 #### __An application which a user can use to manage bread and pastry orders across vendors. October 2, 2020__
 
@@ -25,16 +25,16 @@ Pierre should be provided with a link to a page presenting him with a form to cr
 
 ## Project Objectives:
 
-  * A splash page is used. [Incomplete]
-  * Project has Vendor and Order classes. [Incomplete]
-  * Project uses two or more controllers. [Incomplete]
-  * Models are thoroughly tested. [Incomplete]
-  * GET and POST requests/responses are used successfully. [Incomplete]
-  * MVC routes follow RESTful conventions. [Incomplete]
-  * Code and documentation follow best practices (descriptive variables names, proper indentation and spacing, separation between user-interface and business logic, detailed commit messages in the correct tense, and a well-formatted README with installation instructions). [Incomplete]
-  * Project is in a polished, portfolio-quality state. [Incomplete]
-  * Required functionality was present at Friday deadline. [Incomplete]
-  * Project demonstrates understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology. [Incomplete]
+  * A splash page is used. [Complete]
+  * Project has Vendor and Order classes. [Complete]
+  * Project uses two or more controllers. [Complete]
+  * Models are thoroughly tested. [Complete]
+  * GET and POST requests/responses are used successfully. [Complete]
+  * MVC routes follow RESTful conventions. [Complete]
+  * Code and documentation follow best practices (descriptive variables names, proper indentation and spacing, separation between user-interface and business logic, detailed commit messages in the correct tense, and a well-formatted README with installation instructions). [Complete]
+  * Project is in a polished, portfolio-quality state. [Complete]
+  * Required functionality was present at Friday deadline. [Complete]
+  * Project demonstrates understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology. [Complete]
 
 ## Specs
 
