@@ -8,7 +8,11 @@
 <ol>
 @foreach (Order order in @Model["orders"])
 {
-  <li><a href='/orders/@Model["vendor"].Id/orders/@order.Id'>@order.OrderTitle</a></li>
+  <li>Order # @order.Id @order.OrderTitle</li>
+  <ul>
+    <li>@order.OrderDate | $@order.OrderPrice</li>
+    <li>@order.OrderDescription</li>
+  </ul>
 }
 </ol>
 
