@@ -68,9 +68,14 @@ Pierre should be provided with a link to a page presenting him with a form to cr
 * _type "cd desktop", then press enter_
 * _type "git clone https://github.com/3emme/OrderTrack", then press enter_
 * _locate and open directory on desktop named "OrderTrack" with your console of choice_
-* _in console, locate and move to the directory inside called OrderTrack_
-* _in console, run $dotnet restore_
-* _in console, run $dotnet run_
+* _(in console) locate and move to the directory inside called OrderTrack.Tests_
+* _(in console) run $dotnet restore_
+* _(in console) run $dotnet build_
+* _To test the models: (in console) run $dotnet build_
+* _(in console) locate and move to the directory inside called OrderTrack_
+* _(in console) run $dotnet restore_
+* _(in console) run $dotnet build_
+* _(in console) run $dotnet run_
 
 
 ## Support and contact details
